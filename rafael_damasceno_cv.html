@@ -83,8 +83,6 @@
   --accent: #1a56db;
   --accent-light: #e8effd;
   --rule: #d8d8d3;
-  --tag-bg: #f0f4ff;
-  --tag-border: #c7d7fc;
   --bg: #ffffff;
 }
 
@@ -97,47 +95,47 @@ body {
   width: 210mm;
   min-height: 297mm;
   margin: 0 auto;
-  padding: 18mm 20mm 14mm 20mm;
-  line-height: 1.4;
-  font-size: 8.5pt;
+  padding: 16mm 18mm 12mm 18mm;
+  line-height: 1.38;
+  font-size: 8pt;
 }
 
 /* ── HEADER ── */
-.header {
+header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 10px;
-  margin-bottom: 12px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
   border-bottom: 2px solid var(--accent);
 }
 
-.header-left h1 {
+header h1 {
   font-family: 'DM Serif Display', serif;
-  font-size: 24pt;
+  font-size: 22pt;
   font-weight: 400;
   letter-spacing: -0.5px;
   line-height: 1.1;
   color: var(--ink);
 }
 
-.header-left h1 em { font-style: italic; }
+header h1 em { font-style: italic; }
 
 .header-subtitle {
-  font-size: 8pt;
+  font-size: 7.5pt;
   font-weight: 500;
   color: var(--ink-muted);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .header-right {
   text-align: right;
-  font-size: 8pt;
+  font-size: 7.5pt;
   color: var(--ink-light);
-  line-height: 1.65;
-  padding-top: 4px;
+  line-height: 1.6;
+  padding-top: 2px;
 }
 
 .header-right a {
@@ -145,39 +143,30 @@ body {
   text-decoration: none;
 }
 
-/* ── LAYOUT: single column (ATS-friendly) ── */
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-/* ── SECTION LABELS ── */
-.section-label {
-  font-size: 7.5pt;
+/* ── SECTIONS ── */
+h2 {
+  font-size: 7pt;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 6px;
-  margin-top: 12px;
-  padding-bottom: 3px;
+  margin-bottom: 5px;
+  margin-top: 9px;
+  padding-bottom: 2px;
   border-bottom: 1px solid var(--rule);
 }
 
-.section-label:first-child { margin-top: 0; }
-
 /* ── PERFIL ── */
 .perfil {
-  font-size: 8.5pt;
+  font-size: 8pt;
   color: var(--ink-light);
-  line-height: 1.55;
-  margin-bottom: 4px;
+  line-height: 1.5;
+  margin-bottom: 2px;
 }
 
 /* ── JOBS ── */
 .job {
-  padding: 6px 0;
+  padding: 4px 0;
 }
 
 .job-header {
@@ -188,125 +177,91 @@ body {
 }
 
 .job-title {
-  font-size: 9.5pt;
+  font-size: 9pt;
   font-weight: 700;
   color: var(--ink);
 }
 
 .job-period {
-  font-size: 7.5pt;
+  font-size: 7pt;
   font-weight: 600;
   color: var(--accent);
   white-space: nowrap;
 }
 
 .job-company {
-  font-size: 7.5pt;
+  font-size: 7pt;
   font-weight: 500;
   color: var(--ink-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 4px;
-}
-
-.job-bullets {
-  list-style: none;
-  padding: 0;
-}
-
-.job-bullets li {
-  font-size: 8pt;
-  color: var(--ink-light);
-  line-height: 1.45;
-  padding-left: 12px;
-  position: relative;
-  margin-bottom: 2px;
-}
-
-.job-bullets li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-size: 7pt;
-}
-
-/* ── SKILLS INLINE ── */
-.skills-row {
-  margin-bottom: 4px;
-}
-
-.skills-row-title {
-  font-size: 7.5pt;
-  font-weight: 700;
-  color: var(--ink-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  display: inline;
-}
-
-.skills-row-content {
-  font-size: 8pt;
-  color: var(--ink-light);
-  display: inline;
-}
-
-/* ── PROJECT ── */
-.project {
-  padding: 6px 0;
-}
-
-.project-name {
-  font-size: 9.5pt;
-  font-weight: 700;
-  color: var(--ink);
-  display: inline;
-}
-
-.project-role {
-  font-size: 7.5pt;
-  font-weight: 500;
-  color: var(--ink-muted);
-  display: inline;
-  margin-left: 6px;
-}
-
-.project-desc {
-  font-size: 8pt;
-  color: var(--ink-light);
-  line-height: 1.45;
-  margin-top: 3px;
   margin-bottom: 3px;
 }
 
-.project-bullets {
+ul {
   list-style: none;
   padding: 0;
 }
 
-.project-bullets li {
-  font-size: 8pt;
+ul li {
+  font-size: 7.5pt;
   color: var(--ink-light);
-  line-height: 1.45;
-  padding-left: 12px;
+  line-height: 1.4;
+  padding-left: 10px;
   position: relative;
-  margin-bottom: 2px;
+  margin-bottom: 1.5px;
 }
 
-.project-bullets li::before {
+ul li::before {
   content: '—';
   position: absolute;
   left: 0;
   color: var(--accent);
+  font-size: 6pt;
+}
+
+/* ── PROJECTS ── */
+.project {
+  padding: 3px 0;
+}
+
+.project-name {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.project-sub {
+  font-size: 7pt;
+  color: var(--ink-muted);
+  margin-bottom: 2px;
+}
+
+/* ── SKILLS ── */
+.skills-row {
+  margin-bottom: 2px;
+  font-size: 7.5pt;
+  line-height: 1.45;
+}
+
+.skills-row strong {
+  font-weight: 700;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   font-size: 7pt;
 }
 
-/* ── FORMATION / CERTS ── */
-.formation-line {
-  font-size: 8pt;
+.skills-row span {
   color: var(--ink-light);
-  line-height: 1.5;
-  margin-bottom: 2px;
+}
+
+/* ── FORMATION ── */
+.formation-line {
+  font-size: 7.5pt;
+  color: var(--ink-light);
+  line-height: 1.45;
+  margin-bottom: 1.5px;
 }
 
 .formation-line strong {
@@ -316,11 +271,11 @@ body {
 /* ── FOOTER ── */
 .footer {
   border-top: 1px solid var(--rule);
-  padding-top: 8px;
-  margin-top: 10px;
+  padding-top: 6px;
+  margin-top: 8px;
   display: flex;
   justify-content: space-between;
-  font-size: 7pt;
+  font-size: 6.5pt;
   color: var(--ink-muted);
 }
 
@@ -329,163 +284,130 @@ body {
   text-decoration: none;
 }
 
-/* ── TWO COL for skills only ── */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px 32px;
-}
-
 @media print {
   body {
     width: auto;
-    padding: 18mm 20mm 14mm 20mm;
+    padding: 16mm 18mm 12mm 18mm;
   }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="header-left">
+<header>
+  <div>
     <h1>Rafael <em>Damasceno</em></h1>
-    <div class="header-subtitle">AI Engineer &nbsp;·&nbsp; RAG Systems &nbsp;·&nbsp; Process Automation &nbsp;·&nbsp; LLM Integration</div>
+    <div class="header-subtitle">AI Engineer &nbsp;·&nbsp; RAG &nbsp;·&nbsp; LLM Integration &nbsp;·&nbsp; Process Automation</div>
   </div>
   <div class="header-right">
-    Guarulhos, São Paulo – Brasil<br>
+    Guarulhos, SP – Brasil<br>
     <a href="tel:+5511985529546">+55 11 98552-9546</a><br>
     <a href="mailto:rafaeldamasceno64@gmail.com">rafaeldamasceno64@gmail.com</a><br>
-    <a href="https://linkedin.com/in/rafael-dmcn">linkedin.com/in/rafael-dmcn</a>
+    <a href="https://linkedin.com/in/rafael-dmcn">linkedin.com/in/rafael-dmcn</a><br>
+    <a href="https://github.com/rafaelstn">github.com/rafaelstn</a>
   </div>
+</header>
+
+<h2>Resumo Profissional</h2>
+<div class="perfil">
+  Engenheiro de IA autodidata com 3+ anos de experiência construindo sistemas de Machine Learning, NLP e automação em produção. Projetos de escala estadual para o Governo de SP (150+ estações monitoradas em tempo real), plataforma com 8.000+ usuários para o Bradesco (25-30% de ganho em produtividade) e automação de processos para prefeituras. Criador de 4 produtos SaaS com stack moderna (Python, FastAPI, Next.js, PostgreSQL, Docker). Experiência prática com RAG, integração multi-provider de LLMs, agentes de IA e pipelines de dados em ambientes corporativos e governamentais.
 </div>
 
-<!-- CONTENT -->
-<div class="content">
+<h2>Experiência Profissional</h2>
 
-  <div class="section-label">Resumo Profissional</div>
-  <div class="perfil">
-    Engenheiro de IA com experiência em arquiteturas RAG, integração de LLMs e automação de processos em ambientes corporativos e governamentais. Atuação em projetos de escala estadual para o Governo de SP, plataformas com 8 mil+ usuários para o Bradesco e sistemas de gestão pública para prefeituras. Criador do Memora, plataforma SaaS de inteligência sobre codebases com busca vetorial híbrida e code review automatizado. Orientado a resultados mensuráveis: redução de custo operacional, ganho de produtividade e automação de processos manuais.
+<div class="job">
+  <div class="job-header">
+    <div class="job-title">AI Engineer — Plataforma de Gestão de Carteira</div>
+    <span class="job-period">2024 · 6 meses</span>
   </div>
-
-  <div class="section-label">Experiência Profissional</div>
-
-  <div class="job">
-    <div class="job-header">
-      <div class="job-title">AI Solutions Engineer</div>
-      <span class="job-period">2025 – Presente</span>
-    </div>
-    <div class="job-company">Governo do Estado de São Paulo · SP Águas (DAEE)</div>
-    <ul class="job-bullets">
-      <li>Arquitetura e desenvolvimento do sistema SP Águas: plataforma web de monitoramento hidrológico em tempo real para técnicos do DAEE, com mapa interativo georreferenciado de estações pluviométricas, fluviométricas e piezométricas sobre bacias hidrográficas do estado.</li>
-      <li>Módulo de análise comparativa automatizada entre leituras de sensores (Logger) e medições manuais para identificação de divergências, com alertas inteligentes via thresholds configuráveis.</li>
-      <li>Integração direta com API SIBH (Sistema Integrado de Bacias Hidrográficas), consultas históricas desde 1977 e comparação simultânea de até 10 estações para análise regional.</li>
-      <li>Exportação de dados em CSV/Excel para relatórios técnicos e auditorias, com janela hidrológica padrão (07:00–06:59).</li>
-      <li>Projeto e desenvolvimento de dashboard unificado com automação por IA para centralizar operações de setor em reestruturação, substituindo processos de ~15 funcionários via dispensa incentivada.</li>
-      <li>Automação de fluxos operacionais com agentes inteligentes, operação sobre data lakes SQL e gestão de documentos físicos e digitais para continuidade operacional.</li>
-    </ul>
-  </div>
-
-  <div class="job">
-    <div class="job-header">
-      <div class="job-title">Artificial Intelligence Engineer</div>
-      <span class="job-period">2023 – Presente</span>
-    </div>
-    <div class="job-company">Cebi Informática</div>
-    <ul class="job-bullets">
-      <li>Desenvolvimento de sistemas inteligentes e automação de processos administrativos para múltiplas prefeituras clientes em produção.</li>
-      <li>Integração de sistemas corporativos heterogêneos e bancos de dados SQL em ambientes legados.</li>
-      <li>Construção de pipelines de automação com FastAPI e arquiteturas orientadas a eventos.</li>
-      <li>Aplicação de IA para redução de custo operacional e melhoria de eficiência em processos de gestão municipal.</li>
-    </ul>
-  </div>
-
-  <div class="job">
-    <div class="job-header">
-      <div class="job-title">AI Engineer — Plataforma de Gestão de Carteira</div>
-      <span class="job-period">2024 · 6 meses</span>
-    </div>
-    <div class="job-company">Bradesco — Arquitetura e Desenvolvimento Independente</div>
-    <ul class="job-bullets">
-      <li>Plataforma de gestão de carteira utilizada por 8 mil+ funcionários, com hierarquia de acesso multinível (gerentes, líderes regionais, estaduais e diretores).</li>
-      <li>Integração de LLMs com LangChain para recomendações de produtos em tempo real e automação de comunicação personalizada por perfil de cliente.</li>
-      <li>Assistente conversacional privado por usuário com isolamento completo entre contas para consultas de vendas, comissões e propostas.</li>
-      <li>RAG sobre base interna de regulamentos e informações institucionais, com alertas inteligentes de metas e ações corretivas via IA.</li>
-      <li>Geolocalização integrada com Google Maps e Receita Federal para prospecção e análise de CNPJs por região.</li>
-      <li>Piloto com 100 funcionários: 25–30% de ganho na velocidade de gestão da carteira e 8% de aumento nas conversões por recomendação da IA.</li>
-    </ul>
-  </div>
-
-  <div class="section-label">Produto Próprio</div>
-
-  <div class="project">
-    <div><span class="project-name">Memora — AI Codebase Intelligence Platform</span><span class="project-role">· Founder & AI Systems Architect</span></div>
-    <div class="project-desc">Plataforma SaaS de inteligência operacional sobre codebases corporativos, voltada a PMEs brasileiras. Stack: Python, FastAPI, PostgreSQL, pgvector, Next.js, React, TypeScript, Docker.</div>
-    <ul class="project-bullets">
-      <li>Code Intelligence: indexação AST de codebases Python com embeddings vetoriais e busca híbrida (semântica + BM25 com fusão RRF).</li>
-      <li>Error Monitor: ingestão de logs em tempo real com análise por IA, gerando alertas automáticos via e-mail e webhooks.</li>
-      <li>Technical Memory: captura automática de conhecimento a partir de PRs, commits e issues do GitHub, gerando wikis por componente.</li>
-      <li>Code Review: revisão automatizada de PRs no GitHub com 5 análises paralelas via LLM (bugs, segurança, performance, consistência, padrões).</li>
-      <li>Suporte multi-provider: OpenAI, Anthropic (Claude), Google, Groq e Ollama para flexibilidade de modelo.</li>
-      <li>Frontend com dashboard completo: chat contextual, monitor de erros, memória técnica e interface de code review.</li>
-    </ul>
-  </div>
-
-  <div class="section-label">Competências Técnicas</div>
-
-  <div class="two-col">
-    <div class="skills-row">
-      <span class="skills-row-title">Linguagens: </span>
-      <span class="skills-row-content">Python, TypeScript, SQL, R</span>
-    </div>
-    <div class="skills-row">
-      <span class="skills-row-title">AI & LLMs: </span>
-      <span class="skills-row-content">RAG, Claude API, OpenAI API, LangChain, pgvector, LLM Ops, Prompt Engineering</span>
-    </div>
-    <div class="skills-row">
-      <span class="skills-row-title">Backend: </span>
-      <span class="skills-row-content">FastAPI, REST APIs, SQLAlchemy, MCP Server, GitHub Webhooks</span>
-    </div>
-    <div class="skills-row">
-      <span class="skills-row-title">Frontend: </span>
-      <span class="skills-row-content">Next.js, React, Tailwind CSS</span>
-    </div>
-    <div class="skills-row">
-      <span class="skills-row-title">Dados: </span>
-      <span class="skills-row-content">PostgreSQL, Vector Search, Data Pipelines, Data Lakes</span>
-    </div>
-    <div class="skills-row">
-      <span class="skills-row-title">Infra: </span>
-      <span class="skills-row-content">Docker, Kubernetes, CI/CD, Cloud Deploy</span>
-    </div>
-    <div class="skills-row">
-      <span class="skills-row-title">Domínios: </span>
-      <span class="skills-row-content">Arquitetura de IA, Automação de Processos, Microsserviços, Sistemas Governamentais</span>
-    </div>
-    <div class="skills-row">
-      <span class="skills-row-title">Acadêmico: </span>
-      <span class="skills-row-content">TensorFlow, PyTorch, scikit-learn, Spark, Hadoop</span>
-    </div>
-  </div>
-
-  <div class="section-label">Formação Acadêmica</div>
-  <div class="formation-line"><strong>Tecnologia em Inteligência Artificial</strong> — FIAP · 2026 – 2027 (em curso)</div>
-
-  <div class="section-label">Certificações & Reconhecimentos</div>
-  <div class="formation-line"><strong>Prêmio 100k Club</strong> — NoCode StartUp, 2024 · R$100k+ faturados como consultor independente de IA</div>
-  <div class="formation-line"><strong>Blockchain</strong> — Certificação concluída</div>
-  <div class="formation-line"><strong>Estratégias e Modelos de Negócios</strong> — Certificação concluída</div>
-  <div class="formation-line"><strong>Python for Data Science & AI</strong> — Em curso</div>
-
-  <div class="section-label">Idiomas</div>
-  <div class="formation-line"><strong>Português</strong> — Nativo &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Inglês</strong> — Técnico (leitura e escrita profissional)</div>
-
+  <div class="job-company">Bradesco — Arquitetura e Desenvolvimento Independente</div>
+  <ul>
+    <li>Projetei e entreguei do zero uma plataforma de gestão de carteira de clientes para 8.000+ funcionários, com hierarquia de acesso multinível (gerentes, líderes regionais, estaduais e diretores).</li>
+    <li>Integração de LLMs com LangChain para análise contínua de perfis, gerando recomendações de produtos em tempo real e automação de comunicação personalizada por segmento.</li>
+    <li>Assistente conversacional privado com RAG sobre base de regulamentos internos e isolamento completo entre contas para consultas de vendas, comissões e propostas.</li>
+    <li>Geolocalização integrada com Google Maps e Receita Federal para prospecção e análise de CNPJs por região.</li>
+    <li>Piloto com 100 funcionários: 25–30% de ganho na velocidade de gestão da carteira e 8% de aumento nas conversões por recomendação da IA.</li>
+  </ul>
 </div>
 
-<!-- FOOTER -->
+<div class="job">
+  <div class="job-header">
+    <div class="job-title">AI Solutions Engineer</div>
+    <span class="job-period">2025 – Presente</span>
+  </div>
+  <div class="job-company">Governo do Estado de São Paulo · SP Águas (DAEE)</div>
+  <ul>
+    <li>Arquitetura e desenvolvimento do SP Águas: sistema web de monitoramento hidrológico em tempo real com mapa interativo de 150+ estações (pluviométricas, fluviométricas e piezométricas) sobre bacias hidrográficas do estado, integrado à API SIBH.</li>
+    <li>Módulo de análise comparativa automatizada entre sensores (Logger) e medições manuais com alertas inteligentes via thresholds configuráveis, consultas históricas desde 1977 e comparação de até 10 estações simultâneas.</li>
+    <li>Projeto de dashboard unificado com automação por agentes de IA para centralizar operações de setor em reestruturação, substituindo processos manuais de ~15 funcionários com operação sobre data lakes SQL e gestão documental.</li>
+    <li>Stack: React, TypeScript, Express.js, Leaflet, Supabase, Recharts. Interface responsiva otimizada para uso em campo (mobile) e escritório.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <div class="job-title">Artificial Intelligence Engineer</div>
+    <span class="job-period">2023 – Presente</span>
+  </div>
+  <div class="job-company">Cebi Informática</div>
+  <ul>
+    <li>Desenvolvimento do Arkas: assistente virtual WhatsApp para empresa de saneamento com 10 fluxos automatizados (extratos, histórico de consumo, ordens de serviço, protocolos), substituindo GPT-4 + n8n por roteamento determinístico em Python + Qwen3 8B local via Ollama.</li>
+    <li>Projetei e entreguei sistemas de automação em produção para prefeituras, com integração a ERPs municipais legados e bancos de dados Oracle/SQL.</li>
+    <li>Construção de pipelines de automação com FastAPI e arquiteturas orientadas a eventos, reduzindo tempo de processamento de demandas administrativas.</li>
+    <li>Automação de triagem e classificação de documentos com IA para processos de gestão municipal.</li>
+  </ul>
+</div>
+
+<h2>Projetos & Produtos</h2>
+
+<div class="project">
+  <div class="project-name">Memora — AI Codebase Intelligence Platform</div>
+  <div class="project-sub">Founder · Python, FastAPI, PostgreSQL, pgvector, Next.js, React, TypeScript, Docker</div>
+  <ul>
+    <li>Plataforma SaaS com 4 módulos: Code Intelligence (busca híbrida semântica + BM25 com fusão RRF), Error Monitor (ingestão de logs em tempo real + alertas automáticos), Technical Memory (wikis por componente a partir de PRs/commits/issues) e Code Review (5 análises paralelas via LLM).</li>
+    <li>Suporte multi-provider (OpenAI, Anthropic, Google, Groq, Ollama). Dashboard com chat contextual, monitor de erros e interface de review. Voltado a PMEs brasileiras.</li>
+  </ul>
+</div>
+
+<div class="project">
+  <div class="project-name">FinanceAI — Gestão Financeira Pessoal com IA</div>
+  <div class="project-sub">Founder · Next.js 16, React 19, TypeScript, FastAPI, Supabase, OpenAI/Claude/Gemini</div>
+  <ul>
+    <li>Plataforma completa com 9 módulos (transações, dívidas, orçamentos, cartões, investimentos, planejamento mensal) e mentor de IA integrado com ~20 ferramentas de automação via tool-calling multi-provider.</li>
+  </ul>
+</div>
+
+<div class="project">
+  <div class="project-name">KitFlow — Automação de Produção de Camisetas Personalizadas</div>
+  <div class="project-sub">Founder · Next.js 14, FastAPI, OpenAI (GPT Image + Vision), Supabase</div>
+  <ul>
+    <li>Pipeline end-to-end: design com IA generativa (GPT Image 1.5), geração de mockups, produção com nomes/números/tamanhos e montagem de arquivo para impressão. 3 módulos integrados (Design, Produção, Impressão).</li>
+  </ul>
+</div>
+
+<h2>Competências Técnicas</h2>
+
+<div class="skills-row"><strong>Linguagens: </strong><span>Python, TypeScript, SQL, R</span></div>
+<div class="skills-row"><strong>AI & Machine Learning: </strong><span>RAG, NLP, LLM Integration, Claude API, OpenAI API, LangChain, pgvector, Prompt Engineering, LLM Ops, Agentes de IA</span></div>
+<div class="skills-row"><strong>Backend: </strong><span>FastAPI, REST APIs, SQLAlchemy, MCP Server, GitHub Webhooks, n8n, Ollama</span></div>
+<div class="skills-row"><strong>Frontend: </strong><span>Next.js, React, Tailwind CSS, Recharts, Leaflet</span></div>
+<div class="skills-row"><strong>Dados & Infra: </strong><span>PostgreSQL, Supabase, Oracle, Vector Search, Data Pipelines, Docker, Git, CI/CD</span></div>
+<div class="skills-row"><strong>Metodologias: </strong><span>Agile/Scrum, Clean Architecture, SOLID, TDD</span></div>
+
+<h2>Formação Acadêmica</h2>
+<div class="formation-line"><strong>Tecnologia em Inteligência Artificial</strong> — FIAP · 2026 – 2027 (em curso)</div>
+
+<h2>Certificações & Reconhecimentos</h2>
+<div class="formation-line"><strong>Prêmio 100k Club</strong> — NoCode StartUp, 2024 · R$100k+ faturados como consultor independente de IA</div>
+<div class="formation-line"><strong>Python for Data Science & AI</strong> — Em curso</div>
+<div class="formation-line"><strong>Blockchain</strong> · <strong>Estratégias e Modelos de Negócios</strong> — Certificações concluídas</div>
+
+<h2>Idiomas</h2>
+<div class="formation-line"><strong>Português</strong> — Nativo &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Inglês</strong> — Técnico (leitura e escrita profissional)</div>
+
 <div class="footer">
   <span>Rafael Damasceno · rafaeldamasceno64@gmail.com · +55 11 98552-9546</span>
-  <a href="https://linkedin.com/in/rafael-dmcn">linkedin.com/in/rafael-dmcn</a>
+  <span><a href="https://github.com/rafaelstn">github.com/rafaelstn</a> · <a href="https://linkedin.com/in/rafael-dmcn">linkedin.com/in/rafael-dmcn</a></span>
 </div>
 
 </body>
