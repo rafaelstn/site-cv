@@ -78,8 +78,8 @@
 
 :root {
   --ink: #111111;
-  --ink-light: #444444;
-  --ink-muted: #888888;
+  --ink-light: #333333;
+  --ink-muted: #666666;
   --accent: #1a56db;
   --accent-light: #e8effd;
   --rule: #d8d8d3;
@@ -97,61 +97,47 @@ body {
   width: 210mm;
   min-height: 297mm;
   margin: 0 auto;
-  padding: 28mm 22mm 18mm 22mm;
-  line-height: 1.45;
-  font-size: 9.5pt;
-  display: grid;
-  grid-template-columns: 1fr 200px;
-  grid-template-rows: auto auto 1fr auto;
-  gap: 0 28px;
+  padding: 18mm 20mm 14mm 20mm;
+  line-height: 1.4;
+  font-size: 8.5pt;
 }
 
 /* ── HEADER ── */
 .header {
-  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 14px;
-  margin-bottom: 18px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid var(--accent);
 }
 
 .header-left h1 {
   font-family: 'DM Serif Display', serif;
-  font-size: 28pt;
+  font-size: 24pt;
   font-weight: 400;
   letter-spacing: -0.5px;
   line-height: 1.1;
   color: var(--ink);
 }
 
-.header-left h1 em {
-  font-style: italic;
-}
+.header-left h1 em { font-style: italic; }
 
 .header-subtitle {
   font-size: 8pt;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--ink-muted);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-top: 6px;
-}
-
-.header-accent-line {
-  width: 44px;
-  height: 3px;
-  background: var(--accent);
-  margin-top: 10px;
-  border-radius: 2px;
+  margin-top: 4px;
 }
 
 .header-right {
   text-align: right;
-  font-size: 8.5pt;
+  font-size: 8pt;
   color: var(--ink-light);
-  line-height: 1.7;
-  padding-top: 8px;
+  line-height: 1.65;
+  padding-top: 4px;
 }
 
 .header-right a {
@@ -159,75 +145,58 @@ body {
   text-decoration: none;
 }
 
-/* ── MAIN COLUMN (left) ── */
-.main {
-  grid-column: 1;
-  grid-row: 2 / 4;
-}
-
-/* ── SIDEBAR (right) ── */
-.sidebar {
-  grid-column: 2;
-  grid-row: 2 / 4;
+/* ── LAYOUT: single column (ATS-friendly) ── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 /* ── SECTION LABELS ── */
 .section-label {
-  font-size: 8pt;
+  font-size: 7.5pt;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 10px;
-  margin-top: 16px;
+  margin-bottom: 6px;
+  margin-top: 12px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--rule);
 }
 
-.main .section-label:first-child,
-.sidebar .section-label:first-child {
-  margin-top: 0;
-}
+.section-label:first-child { margin-top: 0; }
 
 /* ── PERFIL ── */
 .perfil {
-  font-size: 9pt;
+  font-size: 8.5pt;
   color: var(--ink-light);
-  line-height: 1.6;
-  padding: 10px 14px;
-  border-left: 2px solid var(--rule);
-  margin-bottom: 16px;
+  line-height: 1.55;
+  margin-bottom: 4px;
 }
 
 /* ── JOBS ── */
 .job {
-  padding: 10px 0;
-  border-top: 1px dashed var(--rule);
-}
-
-.job:first-of-type {
-  border-top: none;
-  padding-top: 0;
+  padding: 6px 0;
 }
 
 .job-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .job-title {
-  font-size: 10pt;
+  font-size: 9.5pt;
   font-weight: 700;
   color: var(--ink);
 }
 
 .job-period {
-  font-size: 8pt;
+  font-size: 7.5pt;
   font-weight: 600;
   color: var(--accent);
-  background: var(--accent-light);
-  padding: 1px 8px;
-  border-radius: 10px;
   white-space: nowrap;
 }
 
@@ -236,8 +205,8 @@ body {
   font-weight: 500;
   color: var(--ink-muted);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 6px;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
 }
 
 .job-bullets {
@@ -246,54 +215,68 @@ body {
 }
 
 .job-bullets li {
-  font-size: 8.5pt;
+  font-size: 8pt;
   color: var(--ink-light);
-  line-height: 1.5;
-  padding-left: 14px;
+  line-height: 1.45;
+  padding-left: 12px;
   position: relative;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .job-bullets li::before {
-  content: '→';
+  content: '—';
   position: absolute;
   left: 0;
   color: var(--accent);
+  font-size: 7pt;
+}
+
+/* ── SKILLS INLINE ── */
+.skills-row {
+  margin-bottom: 4px;
+}
+
+.skills-row-title {
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: inline;
+}
+
+.skills-row-content {
   font-size: 8pt;
+  color: var(--ink-light);
+  display: inline;
 }
 
-/* ── PROJECT CARD ── */
-.project-card {
-  border: 1px solid var(--tag-border);
-  border-radius: 8px;
-  padding: 12px 14px;
-  margin-top: 8px;
-  position: relative;
-  overflow: hidden;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2.5px;
-  background: linear-gradient(90deg, var(--accent), #4f7af8);
+/* ── PROJECT ── */
+.project {
+  padding: 6px 0;
 }
 
 .project-name {
-  font-family: 'DM Serif Display', serif;
-  font-size: 11pt;
+  font-size: 9.5pt;
+  font-weight: 700;
   color: var(--ink);
-  margin-bottom: 2px;
+  display: inline;
 }
 
 .project-role {
   font-size: 7.5pt;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-weight: 500;
   color: var(--ink-muted);
-  margin-bottom: 8px;
+  display: inline;
+  margin-left: 6px;
+}
+
+.project-desc {
+  font-size: 8pt;
+  color: var(--ink-light);
+  line-height: 1.45;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .project-bullets {
@@ -302,142 +285,42 @@ body {
 }
 
 .project-bullets li {
-  font-size: 8.5pt;
+  font-size: 8pt;
   color: var(--ink-light);
-  line-height: 1.5;
+  line-height: 1.45;
   padding-left: 12px;
   position: relative;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .project-bullets li::before {
-  content: '·';
+  content: '—';
   position: absolute;
-  left: 2px;
+  left: 0;
   color: var(--accent);
-  font-size: 12pt;
-  line-height: 1;
+  font-size: 7pt;
 }
 
-/* ── SIDEBAR SECTIONS ── */
-.skill-group {
-  margin-bottom: 10px;
-}
-
-.skill-group-title {
-  font-size: 7.5pt;
-  font-weight: 700;
-  color: var(--ink-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 5px;
-  font-style: italic;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-.tag {
-  font-size: 7.5pt;
-  font-weight: 500;
+/* ── FORMATION / CERTS ── */
+.formation-line {
+  font-size: 8pt;
   color: var(--ink-light);
-  background: var(--tag-bg);
-  border: 1px solid var(--tag-border);
-  border-radius: 3px;
-  padding: 2px 7px;
+  line-height: 1.5;
+  margin-bottom: 2px;
 }
 
-/* ── FORMAÇÃO / CERTS ── */
-.formation-item {
-  margin-bottom: 8px;
-}
-
-.formation-title {
-  font-size: 9pt;
-  font-weight: 700;
+.formation-line strong {
   color: var(--ink);
-  line-height: 1.3;
-}
-
-.formation-sub {
-  font-size: 8pt;
-  color: var(--ink-muted);
-  line-height: 1.4;
-}
-
-.cert-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-.cert-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-  margin-top: 3px;
-}
-
-.cert-dot.gold { background: #e8a800; }
-
-.cert-title {
-  font-size: 8.5pt;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.3;
-}
-
-.cert-sub {
-  font-size: 7.5pt;
-  color: var(--ink-muted);
-  line-height: 1.4;
-}
-
-/* ── IDIOMAS ── */
-.idioma-item {
-  margin-bottom: 6px;
-}
-
-.idioma-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.idioma-name {
-  font-size: 9pt;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.idioma-level {
-  font-size: 8pt;
-  color: var(--ink-muted);
-}
-
-.idioma-bar {
-  height: 3px;
-  background: var(--accent);
-  border-radius: 2px;
-  margin-top: 3px;
 }
 
 /* ── FOOTER ── */
 .footer {
-  grid-column: 1 / -1;
-  grid-row: 4;
   border-top: 1px solid var(--rule);
-  padding-top: 10px;
-  margin-top: 14px;
+  padding-top: 8px;
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
-  font-size: 7.5pt;
+  font-size: 7pt;
   color: var(--ink-muted);
 }
 
@@ -446,10 +329,17 @@ body {
   text-decoration: none;
 }
 
+/* ── TWO COL for skills only ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 32px;
+}
+
 @media print {
   body {
     width: auto;
-    padding: 28mm 22mm 18mm 22mm;
+    padding: 18mm 20mm 14mm 20mm;
   }
 }
 </style>
@@ -460,8 +350,7 @@ body {
 <div class="header">
   <div class="header-left">
     <h1>Rafael <em>Damasceno</em></h1>
-    <div class="header-subtitle">Artificial Intelligence Engineer &nbsp;·&nbsp; RAG Systems &nbsp;·&nbsp; AI Architecture</div>
-    <div class="header-accent-line"></div>
+    <div class="header-subtitle">AI Engineer &nbsp;·&nbsp; RAG Systems &nbsp;·&nbsp; Process Automation &nbsp;·&nbsp; LLM Integration</div>
   </div>
   <div class="header-right">
     Guarulhos, São Paulo – Brasil<br>
@@ -471,27 +360,29 @@ body {
   </div>
 </div>
 
-<!-- MAIN COLUMN -->
-<div class="main">
+<!-- CONTENT -->
+<div class="content">
 
-  <div class="section-label">Perfil</div>
+  <div class="section-label">Resumo Profissional</div>
   <div class="perfil">
-    Engenheiro de IA especializado em arquiteturas RAG, integração de LLMs e automação de processos para ambientes corporativos e governamentais. Experiência prática na construção de pipelines de ingestão vetorial, sistemas de inteligência operacional sobre codebases e integrações de APIs de IA em produção. Orientado a resultados concretos: do problema validado à solução entregue.
+    Engenheiro de IA com experiência em arquiteturas RAG, integração de LLMs e automação de processos em ambientes corporativos e governamentais. Atuação em projetos de escala estadual para o Governo de SP, plataformas com 8 mil+ usuários para o Bradesco e sistemas de gestão pública para prefeituras. Criador do Memora, plataforma SaaS de inteligência sobre codebases com busca vetorial híbrida e code review automatizado. Orientado a resultados mensuráveis: redução de custo operacional, ganho de produtividade e automação de processos manuais.
   </div>
 
-  <div class="section-label">Experiência</div>
+  <div class="section-label">Experiência Profissional</div>
 
   <div class="job">
     <div class="job-header">
       <div class="job-title">AI Solutions Engineer</div>
       <span class="job-period">2025 – Presente</span>
     </div>
-    <div class="job-company">Governo do Estado de São Paulo</div>
+    <div class="job-company">Governo do Estado de São Paulo · SP Águas (DAEE)</div>
     <ul class="job-bullets">
-      <li>Desenvolvimento de soluções de IA para otimização de processos de gestão pública em escala estadual.</li>
-      <li>Arquitetura e implementação de sistemas em Python com integração a APIs de LLMs (OpenAI, Claude).</li>
-      <li>Automação de fluxos operacionais e integração entre sistemas legados de diferentes prefeituras.</li>
-      <li>Construção de arquiteturas escaláveis para análise e processamento de dados governamentais.</li>
+      <li>Arquitetura e desenvolvimento do sistema SP Águas: plataforma web de monitoramento hidrológico em tempo real para técnicos do DAEE, com mapa interativo georreferenciado de estações pluviométricas, fluviométricas e piezométricas sobre bacias hidrográficas do estado.</li>
+      <li>Módulo de análise comparativa automatizada entre leituras de sensores (Logger) e medições manuais para identificação de divergências, com alertas inteligentes via thresholds configuráveis.</li>
+      <li>Integração direta com API SIBH (Sistema Integrado de Bacias Hidrográficas), consultas históricas desde 1977 e comparação simultânea de até 10 estações para análise regional.</li>
+      <li>Exportação de dados em CSV/Excel para relatórios técnicos e auditorias, com janela hidrológica padrão (07:00–06:59).</li>
+      <li>Projeto e desenvolvimento de dashboard unificado com automação por IA para centralizar operações de setor em reestruturação, substituindo processos de ~15 funcionários via dispensa incentivada.</li>
+      <li>Automação de fluxos operacionais com agentes inteligentes, operação sobre data lakes SQL e gestão de documentos físicos e digitais para continuidade operacional.</li>
     </ul>
   </div>
 
@@ -502,162 +393,92 @@ body {
     </div>
     <div class="job-company">Cebi Informática</div>
     <ul class="job-bullets">
-      <li>Desenvolvimento de sistemas inteligentes e automação de processos para múltiplas prefeituras clientes.</li>
-      <li>Integração de sistemas corporativos heterogêneos e bancos de dados SQL em produção.</li>
+      <li>Desenvolvimento de sistemas inteligentes e automação de processos administrativos para múltiplas prefeituras clientes em produção.</li>
+      <li>Integração de sistemas corporativos heterogêneos e bancos de dados SQL em ambientes legados.</li>
       <li>Construção de pipelines de automação com FastAPI e arquiteturas orientadas a eventos.</li>
-      <li>Aplicação de IA para redução de custo operacional em processos municipais.</li>
+      <li>Aplicação de IA para redução de custo operacional e melhoria de eficiência em processos de gestão municipal.</li>
     </ul>
   </div>
 
   <div class="job">
     <div class="job-header">
-      <div class="job-title">Plataforma de Gestão de Carteira</div>
+      <div class="job-title">AI Engineer — Plataforma de Gestão de Carteira</div>
       <span class="job-period">2024 · 6 meses</span>
     </div>
     <div class="job-company">Bradesco — Arquitetura e Desenvolvimento Independente</div>
     <ul class="job-bullets">
       <li>Plataforma de gestão de carteira utilizada por 8 mil+ funcionários, com hierarquia de acesso multinível (gerentes, líderes regionais, estaduais e diretores).</li>
-      <li>Integração de LLMs com LangChain para recomendações de produtos em tempo real e automação de comunicação personalizada.</li>
+      <li>Integração de LLMs com LangChain para recomendações de produtos em tempo real e automação de comunicação personalizada por perfil de cliente.</li>
       <li>Assistente conversacional privado por usuário com isolamento completo entre contas para consultas de vendas, comissões e propostas.</li>
-      <li>RAG sobre base interna para regulamentos, análise de metas com alertas inteligentes e ações corretivas via IA.</li>
-      <li>Geolocalização com Google Maps e Receita Federal para prospecção e análise de CNPJs por região.</li>
-      <li>Piloto com 100 funcionários: 25–30% de ganho na velocidade de gestão e 8% de aumento nas conversões.</li>
+      <li>RAG sobre base interna de regulamentos e informações institucionais, com alertas inteligentes de metas e ações corretivas via IA.</li>
+      <li>Geolocalização integrada com Google Maps e Receita Federal para prospecção e análise de CNPJs por região.</li>
+      <li>Piloto com 100 funcionários: 25–30% de ganho na velocidade de gestão da carteira e 8% de aumento nas conversões por recomendação da IA.</li>
     </ul>
   </div>
 
-  <div class="section-label">Projeto em Destaque</div>
-  <div class="project-card">
-    <div class="project-name">Memora — AI Codebase Intelligence Platform</div>
-    <div class="project-role">Founder & AI Systems Architect</div>
+  <div class="section-label">Produto Próprio</div>
+
+  <div class="project">
+    <div><span class="project-name">Memora — AI Codebase Intelligence Platform</span><span class="project-role">· Founder & AI Systems Architect</span></div>
+    <div class="project-desc">Plataforma SaaS de inteligência operacional sobre codebases corporativos, voltada a PMEs brasileiras. Stack: Python, FastAPI, PostgreSQL, pgvector, Next.js, React, TypeScript, Docker.</div>
     <ul class="project-bullets">
-      <li>Plataforma RAG para análise, documentação e suporte operacional sobre codebases corporativos.</li>
-      <li>Stack: Python · FastAPI · pgvector · Claude API · GitHub Webhooks · TypeScript MCP Server.</li>
-      <li>7 módulos: suporte técnico, monitoramento de erros, memória técnica, code review com IA, onboarding, extração de regras de negócio e geração de código contextualizada.</li>
-      <li>Arquitetura white-glove voltada a PMEs brasileiras com modelo de implementação gerenciada.</li>
+      <li>Code Intelligence: indexação AST de codebases Python com embeddings vetoriais e busca híbrida (semântica + BM25 com fusão RRF).</li>
+      <li>Error Monitor: ingestão de logs em tempo real com análise por IA, gerando alertas automáticos via e-mail e webhooks.</li>
+      <li>Technical Memory: captura automática de conhecimento a partir de PRs, commits e issues do GitHub, gerando wikis por componente.</li>
+      <li>Code Review: revisão automatizada de PRs no GitHub com 5 análises paralelas via LLM (bugs, segurança, performance, consistência, padrões).</li>
+      <li>Suporte multi-provider: OpenAI, Anthropic (Claude), Google, Groq e Ollama para flexibilidade de modelo.</li>
+      <li>Frontend com dashboard completo: chat contextual, monitor de erros, memória técnica e interface de code review.</li>
     </ul>
   </div>
 
-</div>
+  <div class="section-label">Competências Técnicas</div>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-
-  <div class="section-label">Tech Stack</div>
-
-  <div class="skill-group">
-    <div class="skill-group-title">Linguagens</div>
-    <div class="tags">
-      <span class="tag">Python</span>
-      <span class="tag">R</span>
-      <span class="tag">SQL</span>
+  <div class="two-col">
+    <div class="skills-row">
+      <span class="skills-row-title">Linguagens: </span>
+      <span class="skills-row-content">Python, TypeScript, SQL, R</span>
+    </div>
+    <div class="skills-row">
+      <span class="skills-row-title">AI & LLMs: </span>
+      <span class="skills-row-content">RAG, Claude API, OpenAI API, LangChain, pgvector, LLM Ops, Prompt Engineering</span>
+    </div>
+    <div class="skills-row">
+      <span class="skills-row-title">Backend: </span>
+      <span class="skills-row-content">FastAPI, REST APIs, SQLAlchemy, MCP Server, GitHub Webhooks</span>
+    </div>
+    <div class="skills-row">
+      <span class="skills-row-title">Frontend: </span>
+      <span class="skills-row-content">Next.js, React, Tailwind CSS</span>
+    </div>
+    <div class="skills-row">
+      <span class="skills-row-title">Dados: </span>
+      <span class="skills-row-content">PostgreSQL, Vector Search, Data Pipelines, Data Lakes</span>
+    </div>
+    <div class="skills-row">
+      <span class="skills-row-title">Infra: </span>
+      <span class="skills-row-content">Docker, Kubernetes, CI/CD, Cloud Deploy</span>
+    </div>
+    <div class="skills-row">
+      <span class="skills-row-title">Domínios: </span>
+      <span class="skills-row-content">Arquitetura de IA, Automação de Processos, Microsserviços, Sistemas Governamentais</span>
+    </div>
+    <div class="skills-row">
+      <span class="skills-row-title">Acadêmico: </span>
+      <span class="skills-row-content">TensorFlow, PyTorch, scikit-learn, Spark, Hadoop</span>
     </div>
   </div>
 
-  <div class="skill-group">
-    <div class="skill-group-title">AI & LLMs</div>
-    <div class="tags">
-      <span class="tag">Claude API</span>
-      <span class="tag">OpenAI API</span>
-      <span class="tag">RAG</span>
-      <span class="tag">pgvector</span>
-      <span class="tag">LLM Ops</span>
-      <span class="tag">LangChain</span>
-    </div>
-  </div>
+  <div class="section-label">Formação Acadêmica</div>
+  <div class="formation-line"><strong>Tecnologia em Inteligência Artificial</strong> — FIAP · 2026 – 2027 (em curso)</div>
 
-  <div class="skill-group">
-    <div class="skill-group-title">Full Stack & Infra</div>
-    <div class="tags">
-      <span class="tag">FastAPI</span>
-      <span class="tag">REST APIs</span>
-      <span class="tag">MCP Server</span>
-      <span class="tag">GitHub Webhooks</span>
-      <span class="tag">PostgreSQL</span>
-      <span class="tag">Docker</span>
-      <span class="tag">Kubernetes</span>
-    </div>
-  </div>
-
-  <div class="skill-group">
-    <div class="skill-group-title">Competências</div>
-    <div class="tags">
-      <span class="tag">Arquitetura de IA</span>
-      <span class="tag">Vector Search</span>
-      <span class="tag">Data Pipelines</span>
-      <span class="tag">AI Automation</span>
-      <span class="tag">Cloud Deploy</span>
-      <span class="tag">Microsserviços</span>
-      <span class="tag">Ética em IA</span>
-      <span class="tag">Regulamentação de Dados</span>
-    </div>
-  </div>
-
-  <div class="skill-group">
-    <div class="skill-group-title">Conhecimento Acadêmico</div>
-    <div class="tags">
-      <span class="tag">TensorFlow</span>
-      <span class="tag">PyTorch</span>
-      <span class="tag">scikit-learn</span>
-      <span class="tag">Spark</span>
-      <span class="tag">Hadoop</span>
-    </div>
-  </div>
-
-  <div class="section-label">Formação</div>
-  <div class="formation-item">
-    <div class="formation-title">Tecnologia em Inteligência Artificial</div>
-    <div class="formation-sub">FIAP · 2026 – 2027 (em curso)</div>
-  </div>
-
-  <div class="section-label">Certificações & Prêmios</div>
-
-  <div class="cert-item">
-    <div class="cert-dot"></div>
-    <div>
-      <div class="cert-title">Blockchain</div>
-    </div>
-  </div>
-
-  <div class="cert-item">
-    <div class="cert-dot"></div>
-    <div>
-      <div class="cert-title">Estratégias e Modelos de Negócios</div>
-    </div>
-  </div>
-
-  <div class="cert-item">
-    <div class="cert-dot"></div>
-    <div>
-      <div class="cert-title">Python for Data Science & AI</div>
-      <div class="cert-sub">Em curso</div>
-    </div>
-  </div>
-
-  <div class="cert-item">
-    <div class="cert-dot gold"></div>
-    <div>
-      <div class="cert-title">Prêmio 100k Club · NoCode StartUp, 2024</div>
-      <div class="cert-sub">R$100k+ faturados como consultor independente de IA</div>
-    </div>
-  </div>
+  <div class="section-label">Certificações & Reconhecimentos</div>
+  <div class="formation-line"><strong>Prêmio 100k Club</strong> — NoCode StartUp, 2024 · R$100k+ faturados como consultor independente de IA</div>
+  <div class="formation-line"><strong>Blockchain</strong> — Certificação concluída</div>
+  <div class="formation-line"><strong>Estratégias e Modelos de Negócios</strong> — Certificação concluída</div>
+  <div class="formation-line"><strong>Python for Data Science & AI</strong> — Em curso</div>
 
   <div class="section-label">Idiomas</div>
-
-  <div class="idioma-item">
-    <div class="idioma-header">
-      <span class="idioma-name">Português</span>
-      <span class="idioma-level">Nativo</span>
-    </div>
-    <div class="idioma-bar" style="width: 100%;"></div>
-  </div>
-
-  <div class="idioma-item">
-    <div class="idioma-header">
-      <span class="idioma-name">Inglês</span>
-      <span class="idioma-level">Técnico</span>
-    </div>
-    <div class="idioma-bar" style="width: 100%;"></div>
-  </div>
+  <div class="formation-line"><strong>Português</strong> — Nativo &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Inglês</strong> — Técnico (leitura e escrita profissional)</div>
 
 </div>
 
