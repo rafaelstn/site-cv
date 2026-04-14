@@ -96,7 +96,7 @@ body {
   min-height: 297mm;
   margin: 0 auto;
   padding: 16mm 18mm 12mm 18mm;
-  line-height: 1.38;
+  line-height: 1.45;
   font-size: 8pt;
 }
 
@@ -122,12 +122,12 @@ header h1 {
 header h1 em { font-style: italic; }
 
 .header-subtitle {
-  font-size: 7.5pt;
-  font-weight: 500;
-  color: var(--ink-muted);
-  letter-spacing: 0.1em;
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--ink-light);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
 .header-right {
@@ -145,15 +145,15 @@ header h1 em { font-style: italic; }
 
 /* ── SECTIONS ── */
 h2 {
-  font-size: 7pt;
+  font-size: 7.5pt;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 5px;
-  margin-top: 9px;
-  padding-bottom: 2px;
-  border-bottom: 1px solid var(--rule);
+  margin-bottom: 6px;
+  margin-top: 14px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid var(--accent);
 }
 
 /* ── PERFIL ── */
@@ -166,7 +166,8 @@ h2 {
 
 /* ── JOBS ── */
 .job {
-  padding: 4px 0;
+  padding: 5px 0 6px 0;
+  margin-bottom: 2px;
 }
 
 .job-header {
@@ -206,10 +207,10 @@ ul {
 ul li {
   font-size: 7.5pt;
   color: var(--ink-light);
-  line-height: 1.4;
+  line-height: 1.45;
   padding-left: 10px;
   position: relative;
-  margin-bottom: 1.5px;
+  margin-bottom: 3px;
 }
 
 ul li::before {
@@ -310,14 +311,14 @@ ul li::before {
 
 <h2>Resumo Profissional</h2>
 <div class="perfil">
-  Engenheiro de IA autodidata com 3+ anos construindo sistemas em produção, de monitoramento hidrológico em tempo real para o Governo de SP (150+ estações, integração API SIBH) a plataformas com 8.000+ usuários para o Bradesco (25-30% de ganho em produtividade, 8% em conversões). Criador de 4 produtos SaaS com RAG, agentes de IA e integração multi-provider de LLMs (OpenAI, Claude, Gemini, Groq, Ollama). Automação de processos que substituiu o trabalho de ~15 funcionários em setor governamental. Stack: Python, FastAPI, Next.js, PostgreSQL, pgvector, Docker.
+  Engenheiro de IA com sistemas em produção para Bradesco (8.000+ usuários, 25-30% de ganho em produtividade) e Governo de SP (150+ estações monitoradas em tempo real). 3+ anos entregando plataformas que combinam RAG, agentes de IA e automação de processos, incluindo operação que substituiu 15 posições em setor governamental. Criador de 4 produtos SaaS com integração multi-provider de LLMs (OpenAI, Claude, Gemini, Groq, Ollama). Stack: Python, FastAPI, Next.js, PostgreSQL, pgvector, Docker.
 </div>
 
 <h2>Experiência Profissional</h2>
 
 <div class="job">
   <div class="job-header">
-    <div class="job-title">AI Engineer — Plataforma de Gestão de Carteira</div>
+    <div class="job-title">AI Engineer — Plataforma de Produtividade com IA para 8.000+ Funcionários</div>
     <span class="job-period">2024 · 6 meses</span>
   </div>
   <div class="job-company">Bradesco — Arquitetura e Desenvolvimento Independente</div>
@@ -351,7 +352,7 @@ ul li::before {
   </div>
   <div class="job-company">Cebi Informática</div>
   <ul>
-    <li>Desenvolvimento do Arkas: assistente virtual WhatsApp para empresa de saneamento com 10 fluxos automatizados (extratos, histórico de consumo, ordens de serviço, protocolos), substituindo GPT-4 + n8n por roteamento determinístico em Python + Qwen3 8B local via Ollama.</li>
+    <li>Arquitetura do Arkas: assistente virtual WhatsApp para empresa de saneamento com 10 fluxos automatizados. Migrei de GPT-4 + n8n para roteamento determinístico em Python + Qwen3 8B local via Ollama, eliminando custo de API externa sem perda de qualidade.</li>
     <li>Projetei e entreguei sistemas de automação em produção para prefeituras, com integração a ERPs municipais legados e bancos de dados Oracle/SQL.</li>
     <li>Construção de pipelines de automação com FastAPI e arquiteturas orientadas a eventos, reduzindo tempo de processamento de demandas administrativas.</li>
     <li>Automação de triagem e classificação de documentos com IA para processos de gestão municipal.</li>
